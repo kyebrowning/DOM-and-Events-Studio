@@ -4,7 +4,7 @@ let takeoff = null;
 let flightStatus = null;
 let dashboardBackground = null;
 let shuttleHeight = null;
-// let landing = null;
+let landing = null;
 
 function init(){
     takeoff = document.getElementById('takeoff');
@@ -23,10 +23,14 @@ function init(){
         };
     });
 
-    // landing.addEventListener('click', function(event){
-        // let alert = window.alert('The shuttle is landing. Landing gear engaged.')
+    landing.addEventListener('click', function(event){
+        let alert = window.alert('The shuttle is landing. Landing gear engaged.');
 
-    // });
+        flightStatus.innerHTML = 'The shuttle has landed.';
+        dashboardBackground.style.backgroundColor = 'green';
+        shuttleHeight.innerHTML = 0;
+
+    });
 }
 
 window.onload = init;
