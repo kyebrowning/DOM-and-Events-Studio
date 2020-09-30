@@ -6,6 +6,14 @@ let dashboardBackground = null;
 let shuttleHeight = null;
 let landing = null;
 let abort = null;
+let leftButton = null;
+let upButton = null;
+let downButton = null;
+let rightButton = null;
+// let directionals = null;
+let rocketImage = null;
+let offsetLeft = 0;
+let offsetUp = 0;
 
 function init(){
     takeoff = document.getElementById('takeoff');
@@ -14,6 +22,13 @@ function init(){
     shuttleHeight = document.getElementById('spaceShuttleHeight');
     landing = document.getElementById('landing');
     abort = document.getElementById('missionAbort');
+    leftButton = document.getElementById('leftButton');
+    rightButton = document.getElementById('rightButton');
+    // directionals = document.getElementsByClassName('directions');
+    rocketImage = document.getElementById('rocket');
+
+    
+
 
 
     takeoff.addEventListener('click', function(event){
@@ -41,6 +56,22 @@ function init(){
             shuttleHeight.innerHTML = 0;
         };
     });
+
+    leftButton.addEventListener('click', function(event){
+        offsetLeft += 10;
+        rocketImage.style.position = 'relative';
+        rocketImage.style.left = (offsetLeft)+'px';
+    });
+
+    rightButton.addEventListener('click', function(event){
+        offsetLeft -= 10;
+        rocketImage.style.position = 'relative';
+        rocketImage.style.left = (offsetLeft)+'px';
+    });
+
+
+
+
 }
 
 window.onload = init;
