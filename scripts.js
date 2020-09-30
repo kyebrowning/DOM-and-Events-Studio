@@ -10,7 +10,6 @@ let leftButton = null;
 let upButton = null;
 let downButton = null;
 let rightButton = null;
-// let directionals = null;
 let rocketImage = null;
 let offsetLeft = 0;
 let offsetUp = 0;
@@ -26,11 +25,8 @@ function init(){
     leftButton = document.getElementById('leftButton');
     rightButton = document.getElementById('rightButton');
     upButton = document.getElementById('upButton');
-    // directionals = document.getElementsByClassName('directions');
+    downButton = document.getElementById('downButton');
     rocketImage = document.getElementById('rocket');
-
-    
-
 
 
     takeoff.addEventListener('click', function(event){
@@ -74,6 +70,14 @@ function init(){
     upButton.addEventListener('click', function(event){
         offsetUp -= 10;
         shuttleButtonHeight += 10000;
+        rocketImage.style.position = 'relative';
+        rocketImage.style.top = (offsetUp)+'px';
+        shuttleHeight.innerHTML = shuttleButtonHeight;
+    });
+
+    downButton.addEventListener('click', function(event){
+        offsetUp += 10;
+        shuttleButtonHeight -= 10000;
         rocketImage.style.position = 'relative';
         rocketImage.style.top = (offsetUp)+'px';
         shuttleHeight.innerHTML = shuttleButtonHeight;
