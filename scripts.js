@@ -12,7 +12,7 @@ let downButton = null;
 let rightButton = null;
 let rocketImage = null;
 let offsetLeft = 0;
-let offsetUp = 250;
+let offsetUp = 0;
 let shuttleButtonHeight = 0;
 
 function init(){
